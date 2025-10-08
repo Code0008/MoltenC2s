@@ -5,7 +5,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
 from starlette.status import HTTP_303_SEE_OTHER
-
+from fastapi import FastAPI, Request, Form, UploadFile, File, HTTPException, Body
+import base64
 
 app = FastAPI(title="Panel de Control", version="0.1.0")
 
@@ -230,6 +231,42 @@ def _decode_escapes_maybe(s: str) -> str:
         except Exception:
             pass
     return s
+
+@app.post("/uploads", tags=["API"])
+async def uploads_post(file: dict = Body(...)):
+    """
+    Recibe un JSON con una clave 'file' cuyo valor es texto base64.
+    Decodifica el contenido y lo guarda como archivo .moltencito.
+    """
+    os.makedirs("uploads", exist_ok=True)
+
+    # Validar y extraer base64
+    base64_data = file.get("file")
+    if not base64_data:
+        raise HTTPException(status_code=400, detail="Falta el campo 'file' con contenido base64.")
+
+    try:
+        decoded_bytes = base64.b64decode(base64_data.encode('utf-8'))
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Error al decodificar base64: {e}")
+
+    # Crear nombre único
+    name_with_date = datetime.datetime.now() 
+    name_date = name_with_date.strftime("%A_%B_%d_%Y_%I:%M:%S_%p") 
+
+    filename = f"{name_date}.moltencito"
+    filepath = os.path.join("uploads", filename)
+
+    # Guardar contenido en archivo
+    try:
+        with open(filepath, "wb") as f:
+            f.write(decoded_bytes)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"No se pudo guardar el archivo: {e}")
+
+    return {"status": "ok", "filename": filename}
+
+
 
 @app.post("/Responses", tags=["API"])
 async def responses_post(
