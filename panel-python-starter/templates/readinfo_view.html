@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Vista de archivo</h1>
+  <p class="muted">Archivo: <strong>{{ name }}</strong></p>
+  <pre style="white-space: pre-wrap;word-break: break-word;">{{ content }}</pre>
+  <div class="grid">
+    <a class="cta" href="/readinfo">← Volver a la lista</a>
+    <a class="cta" href="/">Inicio</a>
+  </div>
+</section>
+{% endblock %}

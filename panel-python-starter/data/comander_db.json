@@ -1,0 +1,183 @@
+{
+  "machines": {
+    "DESKTOP-15VR2CC": {
+      "machine": "DESKTOP-15VR2CC",
+      "last_seen": "2025-10-02T19:24:40.430903Z",
+      "current_command": {
+        "id": "45509df6",
+        "machine": "DESKTOP-15VR2CC",
+        "command": "whoami",
+        "created_at": "2025-10-02T19:24:53.987441Z"
+      },
+      "command_version": 2
+    },
+    "DESKTOP-TPSHOB1": {
+      "machine": "DESKTOP-TPSHOB1",
+      "last_seen": "2025-10-02T20:23:19.451879Z",
+      "current_command": {
+        "id": "75bf366e",
+        "machine": "DESKTOP-TPSHOB1",
+        "command": "whoami",
+        "created_at": "2025-10-02T20:23:52.209735Z"
+      },
+      "command_version": 1
+    }
+  },
+  "history": [
+    {
+      "id": "ea2f9f8a",
+      "machine": "DESKTOP-15VR2CC",
+      "command": "dir",
+      "created_at": "2025-10-02T19:08:33.993307Z"
+    },
+    {
+      "id": "45509df6",
+      "machine": "DESKTOP-15VR2CC",
+      "command": "whoami",
+      "created_at": "2025-10-02T19:24:53.987441Z"
+    },
+    {
+      "id": "75bf366e",
+      "machine": "DESKTOP-TPSHOB1",
+      "command": "whoami",
+      "created_at": "2025-10-02T20:23:52.209735Z"
+    }
+  ],
+  "responses": [
+    {
+      "id": "13d2a9df",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "ea2f9f8a",
+      "command": "dir",
+      "stdout": "Directorio: D:\\HakinEtico\r\n\r\n\r\nMode                 LastWriteTime         Length Name                                                                 \r\n----                 -------------         ------ ----                                                                 \r\nd-----         2/10/2025     01:35                output                                                               \r\nd-----         2/10/2025     12:49                panel-python-starter                                                 \r\nd-----        30/09/2025     03:09                Process Hacker 2                                                     \r\nd-----         2/10/2025     14:05                __pycache__                                                          \r\n-a----         2/10/2025     13:41           4869 command_executor.py                                                  \r\n-a----         1/10/2025     23:50           2214 creador_procesos.py                                                  \r\n-a----        30/09/2025     03:03            808 hilo.py                                                              \r\n-a----        30/09/2025     03:12            116 keylog.txt                                                           \r\n-a----         2/10/2025     00:44       22143422 kkkkkkkkkkkkkkkkk.b64                                                \r\n-a----         1/10/2025     23:38           7450 listener.py                                                          \r\n-a----         2/10/2025     12:09           1158 main.py                                                              \r\n-a----         2/10/2025     14:17           1225 main_reader.py                                                       \r\n-a----         2/10/2025     12:46           8384 panel-python-starter.zip                                             \r\n-a----         2/10/2025     14:02          11232 reader.py                                                            \r\n-a----         1/10/2025     23:23              8 stop                                                                 \r\n-a----         1/10/2025     00:21            221 xd.py",
+      "stdout_raw": "Directorio: D:\\HakinEtico\r\n\r\n\r\nMode                 LastWriteTime         Length Name                                                                 \r\n----                 -------------         ------ ----                                                                 \r\nd-----         2/10/2025     01:35                output                                                               \r\nd-----         2/10/2025     12:49                panel-python-starter                                                 \r\nd-----        30/09/2025     03:09                Process Hacker 2                                                     \r\nd-----         2/10/2025     14:05                __pycache__                                                          \r\n-a----         2/10/2025     13:41           4869 command_executor.py                                                  \r\n-a----         1/10/2025     23:50           2214 creador_procesos.py                                                  \r\n-a----        30/09/2025     03:03            808 hilo.py                                                              \r\n-a----        30/09/2025     03:12            116 keylog.txt                                                           \r\n-a----         2/10/2025     00:44       22143422 kkkkkkkkkkkkkkkkk.b64                                                \r\n-a----         1/10/2025     23:38           7450 listener.py                                                          \r\n-a----         2/10/2025     12:09           1158 main.py                                                              \r\n-a----         2/10/2025     14:17           1225 main_reader.py                                                       \r\n-a----         2/10/2025     12:46           8384 panel-python-starter.zip                                             \r\n-a----         2/10/2025     14:02          11232 reader.py                                                            \r\n-a----         1/10/2025     23:23              8 stop                                                                 \r\n-a----         1/10/2025     00:21            221 xd.py",
+      "created_at": "2025-10-02T19:17:40.538463Z"
+    },
+    {
+      "id": "adaacb28",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "ea2f9f8a",
+      "command": "dir",
+      "stdout": "Directorio: D:\\HakinEtico\r\n\r\n\r\nMode                 LastWriteTime         Length Name                                                                 \r\n----                 -------------         ------ ----                                                                 \r\nd-----         2/10/2025     01:35                output                                                               \r\nd-----         2/10/2025     12:49                panel-python-starter                                                 \r\nd-----        30/09/2025     03:09                Process Hacker 2                                                     \r\nd-----         2/10/2025     14:05                __pycache__                                                          \r\n-a----         2/10/2025     13:41           4869 command_executor.py                                                  \r\n-a----         1/10/2025     23:50           2214 creador_procesos.py                                                  \r\n-a----        30/09/2025     03:03            808 hilo.py                                                              \r\n-a----        30/09/2025     03:12            116 keylog.txt                                                           \r\n-a----         2/10/2025     00:44       22143422 kkkkkkkkkkkkkkkkk.b64                                                \r\n-a----         1/10/2025     23:38           7450 listener.py                                                          \r\n-a----         2/10/2025     12:09           1158 main.py                                                              \r\n-a----         2/10/2025     14:24           6337 main_reader.py                                                       \r\n-a----         2/10/2025     12:46           8384 panel-python-starter.zip                                             \r\n-a----         2/10/2025     14:02          11232 reader.py                                                            \r\n-a----         1/10/2025     23:23              8 stop                                                                 \r\n-a----         1/10/2025     00:21            221 xd.py",
+      "stdout_raw": "Directorio: D:\\HakinEtico\r\n\r\n\r\nMode                 LastWriteTime         Length Name                                                                 \r\n----                 -------------         ------ ----                                                                 \r\nd-----         2/10/2025     01:35                output                                                               \r\nd-----         2/10/2025     12:49                panel-python-starter                                                 \r\nd-----        30/09/2025     03:09                Process Hacker 2                                                     \r\nd-----         2/10/2025     14:05                __pycache__                                                          \r\n-a----         2/10/2025     13:41           4869 command_executor.py                                                  \r\n-a----         1/10/2025     23:50           2214 creador_procesos.py                                                  \r\n-a----        30/09/2025     03:03            808 hilo.py                                                              \r\n-a----        30/09/2025     03:12            116 keylog.txt                                                           \r\n-a----         2/10/2025     00:44       22143422 kkkkkkkkkkkkkkkkk.b64                                                \r\n-a----         1/10/2025     23:38           7450 listener.py                                                          \r\n-a----         2/10/2025     12:09           1158 main.py                                                              \r\n-a----         2/10/2025     14:24           6337 main_reader.py                                                       \r\n-a----         2/10/2025     12:46           8384 panel-python-starter.zip                                             \r\n-a----         2/10/2025     14:02          11232 reader.py                                                            \r\n-a----         1/10/2025     23:23              8 stop                                                                 \r\n-a----         1/10/2025     00:21            221 xd.py",
+      "created_at": "2025-10-02T19:24:40.667859Z"
+    },
+    {
+      "id": "a6e88a43",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:24:55.882499Z"
+    },
+    {
+      "id": "362c0397",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:25:11.029832Z"
+    },
+    {
+      "id": "44b3bb2e",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:25:26.170157Z"
+    },
+    {
+      "id": "601b0448",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:25:41.332867Z"
+    },
+    {
+      "id": "f6de0ca2",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:25:56.469541Z"
+    },
+    {
+      "id": "061e6034",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:26:11.603736Z"
+    },
+    {
+      "id": "a0a5f87f",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:26:26.761532Z"
+    },
+    {
+      "id": "21402ae7",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:26:41.896296Z"
+    },
+    {
+      "id": "dda8f10d",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:26:57.044923Z"
+    },
+    {
+      "id": "5e72103a",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:27:12.206027Z"
+    },
+    {
+      "id": "47cb45a1",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:27:27.354438Z"
+    },
+    {
+      "id": "59ab4ad2",
+      "machine": "DESKTOP-15VR2CC",
+      "command_id": "45509df6",
+      "command": "whoami",
+      "stdout": "desktop-15vr2cc\\molten gama",
+      "stdout_raw": "desktop-15vr2cc\\molten gama",
+      "created_at": "2025-10-02T19:27:42.518939Z"
+    },
+    {
+      "id": "158d5b03",
+      "machine": "DESKTOP-TPSHOB1",
+      "command_id": "75bf366e",
+      "command": "whoami",
+      "stdout": "desktop-tpshob1\\moltengamalc",
+      "stdout_raw": "desktop-tpshob1\\moltengamalc",
+      "created_at": "2025-10-02T20:24:10.829792Z"
+    }
+  ]
+}

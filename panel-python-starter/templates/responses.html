@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel-wrap">
+  <aside class="inner-sidebar">
+    <h3>Servidores</h3>
+    <ul class="server-list">
+      {% if not machines %}
+        <li class="muted">No hay servidores. Reporte uno con POST /status</li>
+      {% endif %}
+      {% for m in machines %}
+        <li class="{{ 'active' if selected == m else '' }}">
+          <a href="/Responses?machine={{ m }}">{{ m }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <section class="card">
+    <h1 class="heading">Respuestas {% if selected %}de {{ selected }}{% endif %}</h1>
+
+    {% if items %}
+      <ul class="resp-list">
+        {% for r in items %}
+          <li class="resp-item">
+            <details class="resp-collapse">
+              <summary class="resp-summary">
+                <span class="meta-time">⏱ {{ r.created_at }}</span>
+                <span class="meta-machine">🖥 {{ r.machine }}</span>
+                <span class="meta-cmd">
+                  $ {{ r.command or 'N/D' }}
+                  {% if r.command_id %}<span class="muted">#{{ r.command_id }}</span>{% endif %}
+                </span>
+              </summary>
+
+              <!-- Bloque: comando -->
+              <div class="codeframe">
+                <div class="codebar">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                  <span class="filename">command</span>
+                </div>
+                <pre class="codebody"><code>$ {{ r.command or 'N/D' }}</code></pre>
+              </div>
+
+              <!-- Bloque: stdout -->
+              <div class="codeframe">
+                <div class="codebar">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                  <span class="filename">stdout</span>
+                </div>
+                <pre class="codebody"><code>{{ r.stdout }}</code></pre>
+              </div>
+            </details>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="muted">Sin respuestas aún.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

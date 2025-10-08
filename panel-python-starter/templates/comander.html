@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="panel-wrap">
+  <aside class="inner-sidebar">
+    <h3>Servidores</h3>
+    <ul class="server-list">
+      {% if not machines %}
+        <li class="muted">No hay servidores. Reporte uno con POST /status</li>
+      {% endif %}
+      {% for m in machines %}
+        <li class="{{ 'active' if selected == m else '' }}"><a href="/Comander?machine={{ m }}">{{ m }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <section class="terminal-card card">
+    {% if selected %}
+      <h1 class="heading">{{ selected }} Command setter</h1>
+      <form class="cmd-form" method="post" action="/Comander/set">
+        <input type="hidden" name="machine" value="{{ selected }}">
+        <input class="input" type="text" name="command" placeholder="$ Ingrese su comando" required>
+        <button class="btn" type="submit">Setear</button>
+      </form>
+
+      <div class="current">
+        <h2>Comando actual</h2>
+        {% if current_command %}
+          <div class="pill"><strong>#{{ current_command.id }}</strong> — {{ current_command.command }} <span class="muted">({{ current_command.created_at }})</span></div>
+        {% else %}
+          <p class="muted">No hay comando seteado aún.</p>
+        {% endif %}
+      </div>
+
+      <div class="history">
+        <h2>Comandos anteriores:</h2>
+        {% if history %}
+          <ul class="history-list">
+            {% for h in history %}
+              <li><span class="muted">{{ h.created_at }}</span> — <code>{{ h.command }}</code> <span class="muted">(#{{ h.id }})</span></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="muted">Sin historial.</p>
+        {% endif %}
+      </div>
+    {% else %}
+      <p class="muted">Selecciona un servidor en el panel izquierdo.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}
