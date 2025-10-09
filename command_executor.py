@@ -3,13 +3,11 @@ import ctypes.wintypes as wintypes
 
 kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
 
-# Constantes
 STARTF_USESTDHANDLES = 0x00000100
 CREATE_NO_WINDOW = 0x08000000
 HANDLE_FLAG_INHERIT = 0x00000001
 BUFSIZE = 4096
 
-# Estructuras
 class SECURITY_ATTRIBUTES(ctypes.Structure):
     _fields_ = [
         ("nLength", wintypes.DWORD),
@@ -69,26 +67,22 @@ kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
 kernel32.CloseHandle.restype = wintypes.BOOL
 
 def run_command_get_output(cmd):
-    # Crear SECURITY_ATTRIBUTES heredable
     sa = SECURITY_ATTRIBUTES()
     sa.nLength = ctypes.sizeof(SECURITY_ATTRIBUTES)
     sa.lpSecurityDescriptor = None
     sa.bInheritHandle = True
 
-    # Handles para pipe
     read_handle = wintypes.HANDLE()
     write_handle = wintypes.HANDLE()
 
     if not kernel32.CreatePipe(ctypes.byref(read_handle), ctypes.byref(write_handle), ctypes.byref(sa), 0):
         raise ctypes.WinError(ctypes.get_last_error())
 
-    # Evitar que el handle de lectura sea heredado por el hijo
     if not kernel32.SetHandleInformation(read_handle, HANDLE_FLAG_INHERIT, 0):
         kernel32.CloseHandle(read_handle)
         kernel32.CloseHandle(write_handle)
         raise ctypes.WinError(ctypes.get_last_error())
 
-    # Preparar STARTUPINFO con los handles de stdout/stderr apuntando al write_handle
     si = STARTUPINFO()
     si.cb = ctypes.sizeof(si)
     si.dwFlags = STARTF_USESTDHANDLES
@@ -98,7 +92,6 @@ def run_command_get_output(cmd):
 
     pi = PROCESS_INFORMATION()
 
-    # Comando: usar cmd.exe /c <cmd>
     cmdline = f'powershell.exe /c {cmd}'
 
     success = kernel32.CreateProcessW(
